@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group d-flex justify-content-center mb-3 p-0">
+  <div class="input-group d-flex justify-content-center col-12 mb-3 p-0">
     <input
       v-model="inputValue"
       type="text"
@@ -8,14 +8,14 @@
       aria-describedby="button-search"
     />
     <div class="input-group-append p-0">
-      <button class="btn rounded-0 bg-dark btn-search" @click="changeSearch">
       <router-link
         :to="{ name: 'result', params: { userName: inputValue } }"
         class=""
       >
-        <img src="../assets/icons/search.svg" alt="" />
+        <button class="btn rounded-0 bg-dark btn-search" @click="changeSearch">
+          <img src="../assets/icons/search.svg" alt="" />
+        </button>
       </router-link>
-      </button>
     </div>
   </div>
 </template>
@@ -25,13 +25,13 @@ export default {
   data() {
     return {
       inputValue: this.$route.params.userName,
-    }
+    };
   },
   methods: {
     changeSearch() {
-      this.$emit('changeSearchValue', this.inputValue)
-    }
-  }
+      this.$emit("changeSearchValue", this.inputValue);
+    },
+  },
 };
 </script>
 
