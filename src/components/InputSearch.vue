@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group d-flex justify-content-center col-12 mb-3 p-0">
+  <div class="input-group d-flex justify-content-center mb-3 p-0 w-100">
     <input
       v-model="inputValue"
       type="text"
@@ -47,5 +47,10 @@ export default {
   width: 100px;
   height: 50px;
   max-height: 50px;
+}
+@media only screen and (max-width: 600px) {
+ .input-border {
+   width: 100%;
+  }
 }
 </style>

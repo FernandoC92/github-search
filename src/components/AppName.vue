@@ -30,4 +30,10 @@ export default {
 .link:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 700px) {
+ .app-name {
+   font-size: 52px !important;
+  }
+}
 </style>
