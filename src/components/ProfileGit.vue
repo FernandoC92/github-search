@@ -2,12 +2,12 @@
   <div class="container-fluid mt-4">
     <div v-if="userExist" class="row">
       <div class="col-12 col-md-2 p-0">
-        <div class="card">
+        <div class="card d-flex flex-column align-items-center align-items-start align-items-md-baseline">
           <img
             :src="user.avatarUrl"
             width="300"
             height="300"
-            class="card-img-top"
+            class="card-img-top img-fluid"
             alt="..."
           />
           <div class="card-body">
@@ -15,7 +15,7 @@
             <h6 class="card-subtitle mb-2 text-muted size24">
               {{ user.login }}
             </h6>
-            <div class="mt-4">
+            <div class="mt-4 d-flex flex-row flex-md-column justify-content-between">
               <div class="card-subtitle mb-2 text-muted info-text d-flex">
                 <img
                   class="img-fluid"
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="col-12 col-md-10">
-        <div class="row flex-column">
+        <div class="row flex-column ml-0 ml-md-5 ml-lg-2">
           <div
             v-for="repo in user.repos"
             :key="repo.id"
@@ -128,17 +128,12 @@ export default {
 
         this.user.repos = getRepos.data;
 
-        // if (this.user.repos.length > 0) {
-        //   this.userExist = true
-        // } else {
-        //   this.userExist = false
-        // }
-
         let count = 0;
         this.user.repos.forEach((element) => {
           count += element.stargazers_count;
         });
         this.user.stargazersCount = count;
+        this.userExist = true
       } catch (error) {
         this.userExist = false;
         console.error(error);

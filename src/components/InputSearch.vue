@@ -8,12 +8,14 @@
       aria-describedby="button-search"
     />
     <div class="input-group-append p-0">
+      <button class="btn rounded-0 bg-dark btn-search" @click="changeSearch">
       <router-link
         :to="{ name: 'result', params: { userName: inputValue } }"
-        class="btn rounded-0 bg-dark btn-search d-flex justify-content-center"
+        class=""
       >
         <img src="../assets/icons/search.svg" alt="" />
       </router-link>
+      </button>
     </div>
   </div>
 </template>
@@ -23,8 +25,13 @@ export default {
   data() {
     return {
       inputValue: this.$route.params.userName,
-    };
+    }
   },
+  methods: {
+    changeSearch() {
+      this.$emit('changeSearchValue', this.inputValue)
+    }
+  }
 };
 </script>
 

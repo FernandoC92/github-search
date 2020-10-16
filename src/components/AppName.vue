@@ -15,10 +15,6 @@ export default {
   props: {
     fontSize: String,
   },
-  data() {
-    // eslint-disable-next-line no-unused-labels
-    fontSize: this.props.fontSize;
-  },
 };
 </script>
 

@@ -10,3 +10,8 @@
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/utilities";
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
